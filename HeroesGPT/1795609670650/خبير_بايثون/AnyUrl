@@ -1,0 +1,19 @@
+
+class Settings(BaseSettings):
+    app_name: str = "English Learning API"
+    openapi_url: str = "/openapi.json"
+    docs_url: str = "/docs"
+    logo_url: str = "/static/img/logo.png"
+
+    # JWT
+    secret_key: str
+    algorithm: str = "HS256"
+    access_token_expire_min: int = 30
+
+    # DB
+    database_url: AnyUrl
+
+    class Config:
+        env_file = ".env"
+
+settings = Settings()
