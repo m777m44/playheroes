@@ -1,0 +1,7 @@
+- name: enlearn
+  rules:
+  - alert: EnlearnBuildFailed
+    expr: increase(build_failures_total[1h]) > 0
+    for: 5m
+    annotations:
+      summary: "تم فشل بناء APK خلال آخر ساعة"
