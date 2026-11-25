@@ -1,0 +1,10 @@
+    # استدعاء المعدل التلقائي في الخلفية أو
+    # run `alembic init alembic` في حالة تفضيل Alembic
+    from app.db import models
+
+    async def init():
+        async with engine.begin() as conn:
+            await conn.run_sync(models.Base.metadata.create_all)
+
+    import asyncio
+    asyncio.run(init())
