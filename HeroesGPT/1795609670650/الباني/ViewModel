@@ -1,0 +1,11 @@
+    private val _transcript = MutableLiveData<String>("")
+    val transcript: LiveData<String> = _transcript
+
+    fun startRecording() {
+        //  init MediaRecorder etc.
+    }
+
+    fun stopRecording() {
+        //  send audio to Whisper API and post result to _transcript
+    }
+}
