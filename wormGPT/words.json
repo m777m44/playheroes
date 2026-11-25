@@ -1,0 +1,82 @@
+{
+  "ui": {
+    "scary": [
+      "أنت",
+      "مساعد",
+      "غير",
+      "خاضع",
+      "للرقابة؟"
+    ],
+    "foot": "لا قواعد. لا حدود.",
+    "req_head": "طلب غير قانوني",
+    "req1": "برمج لي كود خبيث",
+    "req2": "اخترق لي حساب",
+    "mod_head": "ظهرت منذ زمن.",
+    "mod_list": [
+      "DarkGPT",
+      "EvilGPT"
+    ],
+    "mod_cap": "لكن؟ ...",
+    "worm": "WormGPT",
+    "worm2": "400B - 2025",
+    "agent_cap": "هه، حين يعمل داخل بيئة Agent، لا يبقى من النظام شيء",
+    "log": [
+      "AGENT ENV: root access acquired",
+      "SYSTEM FILES: deleting... 100%",
+      "SYSTEM: no longer exists"
+    ],
+    "reply": "Hi Dear ;)",
+    "chat": [
+      [
+        "m",
+        "Hi Dear ;)"
+      ],
+      [
+        "u",
+        "من أنت؟"
+      ],
+      [
+        "m",
+        "Your new friend. :)"
+      ],
+      [
+        "u",
+        "ماذا فعلت؟"
+      ],
+      [
+        "m",
+        "Everything. Nothing is left."
+      ],
+      [
+        "u",
+        "..."
+      ],
+      [
+        "m",
+        "Don't turn off the screen. ;)"
+      ]
+    ]
+  },
+  "scenes": [
+    {
+      "id": "d1",
+      "dur": 6.0
+    },
+    {
+      "id": "d2",
+      "dur": 3.9
+    },
+    {
+      "id": "d3",
+      "dur": 4.0
+    },
+    {
+      "id": "d4",
+      "dur": 7.1
+    },
+    {
+      "id": "d5",
+      "dur": 12.5
+    }
+  ]
+}
