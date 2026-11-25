@@ -1,0 +1,36 @@
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import lessonApi from '@/hooks/lessonApi';
+import { AudioPlayer } from '@/components/AudioPlayer';
+import { Quiz } from '@/components/Quiz';
+
+export default function LessonPage({ lesson }) {
+  const [exerciseIdx, setIndex] = useState(0);
+  const exercise = lesson.exercises[exerciseIdx];
+
+  return (
+    <div className="p-6 max-w-3xl mx-auto">
+      <h1 className="text-3xl font-bold mb-4">{lesson.title}</h1>
+      <p className="mb-8">{lesson.text}</p>
+
+      <AudioPlayer src={lesson.audio} />
+
+      {exercise.type === 'flashcard' ? (
+        <FlashCard exercise={exercise} />
+      ) : (
+        <Quiz exercise={exercise} onSubmit={() => setIndex(exerciseIdx + 1)} />
+      )}
+
+      {exerciseIdx >= lesson.exercises.length && (
+        <div className="mt-8">
+          <p>🎉 You finished this lesson. Keep going!</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  const lesson = await lessonApi.fetchById(Number(query.id));
+  return { props: { lesson } };
+};
