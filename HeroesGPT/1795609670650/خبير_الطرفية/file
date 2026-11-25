@@ -1,0 +1,31 @@
+  {
+    "id": "A1-01",
+    "title": "Greetings & Introductions",
+    "level": "A1",
+    "audio": "audio/A1-01.mp3",
+    "content": [
+      "Hello, I’m Ahmed. Nice to meet you.",
+      "What’s your name?"
+    ],
+    "flashcards": [
+      {
+        "image": "img/greetings.png",
+        "word": "Hello",
+        "translation": "مرحبا"
+      },
+      {
+        "image": "img/introductions.png",
+        "word": "Nice to meet you",
+        "translation": "سعيد بلقائك"
+      }
+    ]
+  },
+  {
+    "id": "A1-02",
+    "title": "Colors",
+    "level": "A1",
+    "audio": "audio/A1-02.mp3",
+    "content": ["Red", "Blue", "Green"],
+    "flashcards": [...]
+  }
+]
