@@ -1,0 +1,21 @@
+fun FlashcardScreen(words: List<WordCard>) {
+    var index by remember { mutableStateOf(0) }
+    val card = words[index]
+
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Image(
+            painter = painterResource(card.imageRes),
+            contentDescription = card.word,
+            modifier = Modifier.size(120.dp)
+        )
+        Spacer(Modifier.height(8.dp))
+        Text(text = card.word, style = MaterialTheme.typography.h5)
+        Spacer(Modifier.height(4.dp))
+        Button(onClick = { index = (index + 1) % words.size }) {
+            Text("التالي")
+        }
+    }
+}
