@@ -1,0 +1,8 @@
+    private val context: Context
+) {
+    suspend fun getLessonsFromAsset(fileName: String): List<Lesson> {
+        val jsonString = context.assets.open(fileName)
+            .use { it.readBytes().toString(Charsets.UTF_8) }
+        return Gson().fromJson(jsonString, Array<Lesson>::class.java).toList()
+    }
+}
