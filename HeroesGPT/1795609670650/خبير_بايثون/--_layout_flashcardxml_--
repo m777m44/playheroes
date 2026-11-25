@@ -1,0 +1,14 @@
+<LinearLayout
+    android:id="@+id/flashcard_root"
+    ... >
+    <ImageView
+        android:id="@+id/flashcard_image"
+        .../>
+    <TextView
+        android:id="@+id/flashcard_word"
+        .../>
+    <Button
+        android:id="@+id/flashcard_answer"
+        android:text="Show Translation"
+        .../>
+</LinearLayout>
