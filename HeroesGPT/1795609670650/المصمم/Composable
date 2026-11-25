@@ -1,0 +1,37 @@
+fun LessonCard(
+    title: String,
+    subtitle: String,
+    isCompleted: Boolean,
+    onClick: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp)
+            .clickable { onClick() },
+        backgroundColor = if (isCompleted) LightGreen else LightBlue
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Icon(
+                imageVector = Icons.Default.BrowserUpdated,
+                contentDescription = null,
+                tint = Color.White,
+                modifier = Modifier.size(48.dp)
+            )
+            Spacer(Modifier.width(12.dp))
+            Column {
+                Text(text = title, style = MaterialTheme.typography.h6)
+                Text(text = subtitle, style = MaterialTheme.typography.body2)
+            }
+            Spacer(Modifier.weight(1f))
+            Icon(
+                imageVector = if (isCompleted) Icons.Default.CheckCircle else Icons.Default.ChevronRight,
+                contentDescription = null,
+                tint = LightGray
+            )
+        }
+    }
+}
