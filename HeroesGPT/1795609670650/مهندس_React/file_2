@@ -1,0 +1,17 @@
+  id INTEGER PRIMARY KEY,
+  level TEXT,
+  title TEXT,
+  text TEXT,
+  audio TEXT,
+  video TEXT
+);
+
+CREATE TABLE exercises (
+  id INTEGER PRIMARY KEY,
+  lesson_id INTEGER,
+  type TEXT,
+  question TEXT,
+  options TEXT, -- JSON
+  solution TEXT,
+  image TEXT
+);
