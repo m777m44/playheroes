@@ -1,0 +1,32 @@
+CREATE TABLE lessons (
+    lesson_id         TEXT PRIMARY KEY,        -- مثال: 'A1-01'
+    level             TEXT NOT NULL,          -- A1 | A2 | B1 | B2 | C1 | C2
+    title_ara         TEXT NOT NULL,          -- العنوان بالعربية
+    title_eng         TEXT,                   -- العنوان بالإنجليزية
+    content_ara       TEXT NOT NULL,          -- نص الدورة بالعربية
+    content_eng       TEXT,                   -- نص الدورة بالإنجليزية
+    audio_url         TEXT,                   -- مسار mp3 داخل assets أو URL للاتصال
+    video_url         TEXT,                   -- إذا كان فيديو
+    created_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- جدول تمارين لكل درس
+CREATE TABLE exercises (
+    exercise_id       TEXT PRIMARY KEY,        -- مثال: 'A1-01-EX1'
+    lesson_id         TEXT NOT NULL,
+    type              TEXT NOT NULL,          -- ATTACH (ملف), MCQ, FILL, MATCH
+    question_ara      TEXT NOT NULL,
+    question_eng      TEXT,
+    options_ara       TEXT,                   -- JSON array
+    options_eng       TEXT,
+    answer_ara        TEXT NOT NULL,
+    answer_eng        TEXT,
+    explanation_ara   TEXT,
+    explanation_eng   TEXT,
+    created_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(lesson_id) REFERENCES lessons(lesson_id)
+);
+
+-- مؤكد لتسريع البحث
+CREATE INDEX idx_lesson_level ON lessons(level);
+CREATE INDEX idx_exercise_lesson ON exercises(lesson_id);
