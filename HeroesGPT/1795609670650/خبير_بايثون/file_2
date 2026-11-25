@@ -1,0 +1,50 @@
+    Column, Integer, String, ForeignKey, Text, Enum
+)
+from sqlalchemy.orm import relationship, declarative_base
+import enum
+
+Base = declarative_base()
+
+
+class LevelEnum(str, enum.Enum):
+    A1 = "A1"
+    A2 = "A2"
+    B1 = "B1"
+    B2 = "B2"
+    C1 = "C1"
+    C2 = "C2"
+
+
+class Lesson(Base):
+    __tablename__ = "lessons"
+
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String, nullable=False)
+    level = Column(Enum(LevelEnum), nullable=False)
+    content = Column(Text, nullable=False)
+    # روابط ملفات صوتية/صور يمكن تخزينها في assets / S3
+    audio_url = Column(String, nullable=True)
+    image_url = Column(String, nullable=True)
+
+    exercises = relationship("Exercise", back_populates="lesson", cascade="all, delete-orphan")
+
+
+class ExerciseType(str, enum.Enum):
+    MCQ = "mcq"
+    FILL = "fill"
+    MATCH = "match"
+    READ = "read"
+
+
+class Exercise(Base):
+    __tablename__ = "exercises"
+
+    id = Column(Integer, primary_key=True, index=True)
+    lesson_id = Column(Integer, ForeignKey("lessons.id"), nullable=False)
+    type = Column(Enum(ExerciseType), nullable=False)
+    question = Column(Text, nullable=False)
+    choices = Column(Text)   # JSON string of list for MCQ / MATCH
+    answer = Column(String, nullable=False)
+    explanation = Column(Text, nullable=True)
+
+    lesson = relationship("Lesson", back_populates="exercises")
