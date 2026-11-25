@@ -1,0 +1,5 @@
+  index.tsx                 → Home + Auth
+  levels.tsx                → List of levels
+  lesson/[id].tsx           → Lesson view
+  practice/[id].tsx         → Exercise journal
+  dashboard.tsx             → User progress
