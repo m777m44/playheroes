@@ -1,0 +1,18 @@
+class LessonViewModel @Inject constructor(
+    private val repo: LessonRepository
+) : ViewModel() {
+
+    private val _lessons = MutableLiveData<List<Lesson>>()
+    val lessons: LiveData<List<Lesson>> = _lessons
+
+    init {
+        loadLessons()
+    }
+
+    private fun loadLessons() {
+        viewModelScope.launch(Dispatchers.IO) {
+            val data = repo.getLessonsFromAsset("lessons.json")
+            _lessons.postValue(data)
+        }
+    }
+}
