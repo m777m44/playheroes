@@ -1,0 +1,34 @@
+fun FlashcardScreen(
+    words: List<FlashCard>,
+    onNext: () -> Unit
+) {
+    var position by remember { mutableStateOf(0) }
+    val card = words[position]
+
+    Card(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        elevation = 4.dp
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier.padding(24.dp)
+        ) {
+            Image(
+                painter = painterResource(id = card.imageRes),
+                contentDescription = null,
+                modifier = Modifier.size(140.dp)
+            )
+            Spacer(Modifier.height(24.dp))
+            Text(
+                text = card.question, style = MaterialTheme.typography.titleLarge
+            )
+            Spacer(Modifier.height(12.dp))
+            Button(onClick = { onNext() }) {
+                Text("Next")
+            }
+        }
+    }
+}
