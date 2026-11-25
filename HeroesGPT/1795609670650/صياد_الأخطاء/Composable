@@ -1,0 +1,32 @@
+fun FlashcardScreen(
+    words: List<WordCard>,
+    onCorrect: () -> Unit,
+    onWrong: () -> Unit
+) {
+    val index = remember { mutableStateOf(0) }
+    val card = words[index.value]
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image(
+            painter = painterResource(card.imageRes),
+            contentDescription = null,
+            modifier = Modifier.size(180.dp)
+        )
+        Spacer(Modifier.height(24.dp))
+        Text(card.arabic, style = MaterialTheme.typography.bodyLarge)
+        Spacer(Modifier.height(8.dp))
+        Text(card.english, style = MaterialTheme.typography.titleMedium)
+        Spacer(Modifier.height(24.dp))
+        Row {
+            Button(onClick = { onCorrect() }) { Icon(Icons.Rounded.Check, contentDescription = null) }
+            Spacer(Modifier.width(16.dp))
+            Button(onClick = { onWrong() }) { Icon(Icons.Rounded.Close, contentDescription = null) }
+        }
+    }
+}
