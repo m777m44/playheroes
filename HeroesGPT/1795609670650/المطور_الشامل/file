@@ -1,0 +1,17 @@
+├─ app/
+│   ├─ src/
+│   │   ├─ main/
+│   │   │   ├─ java/com/englishpath/
+│   │   │   │   ├─ ui/      // Screens, Composables
+│   │   │   │   ├─ viewmodel/  // AppViewModel, LessonsViewModel
+│   │   │   │   ├─ repository/ // DataRepository (Room + Firebase)
+│   │   │   │   ├─ model/     // Lesson, Exercise, UserProgress
+│   │   │   │   ├─ util/      // extensions, constants
+│   │   │   │   └─ MainActivity.kt
+│   │   │   ├─ res/
+│   │   │   │   ├─ drawable/
+│   │   │   │   ├─ values/
+│   │   │   │   └─ raw/         // audio files
+│   │   │   └─ AndroidManifest.xml
+│   │   └─ test/
+└─ build.gradle, settings.gradle
