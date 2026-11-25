@@ -1,0 +1,110 @@
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>مسار تعلم اللغة الإنجليزية</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ★ المكتبات الأساسية (CDN) ★ -->
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+<style>
+/*––––––––––––––––––––––––––––––––––––––––––––––––––––––*\
+ GENERAL STYLES
+\*––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+:root{
+  --primary:#2c3e50;
+  --secondary:#e74c3c;
+  --accent:#f1c40f;
+  --bg:#f5f7fa;
+  --text:#2c3e50;
+  --white:#ffffff;
+  --highlight:#c0e5ff;
+}
+
+html{font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 16px;}
+body{margin:0;background:var(--bg);color:var(--text);display:flex;min-height:100vh;flex-direction:column;}
+header{background:var(--primary);color:var(--white);padding:1.2rem;}
+header h1{margin:0;font-size:1.8rem;display:flex;align-items:center;}
+header i{margin-left:0.8rem;}
+main{flex:1;display:flex;justify-content:center;align-items:center;}
+footer{background:var(--primary);color:var(--white);text-align:center;padding:1rem;font-size:0.9rem;}
+
+.card{background:var(--white);border-radius:12px;
+      box-shadow:0 2px 8px rgba(0,0,0,.15);
+      overflow:hidden;width:90%;max-width:330px;}
+.card img{width:100%;height:180px;object-fit:cover;}
+.card-body{padding:1rem;}
+.card-body h3{margin:0 0 .5rem;font-size:1.4rem;}
+.card-body p{margin:0 0 1rem;color:gray;}
+.btn{display:inline-block;background:var(--secondary);
+     color:var(--white);padding:.55rem 1.3rem;
+     border-radius:6px;text-decoration:none;
+     font-weight:600;transition:background .2s;}
+.btn:hover{background:#c0392b;}
+
+@media (min-width:480px){
+  main{flex-direction:row;justify-content:center;gap:2rem;}
+  .card{width:320px;}
+}
+/*------------------------------------*/
+</style>
+</head>
+<body>
+
+<header>
+    <i class="fas fa-globe-americas"></i>
+    <h1>مسار تعلم الإنجليزية</h1>
+</header>
+
+<main>
+    <!-- مرحبة – شريحة تمهيدية -->
+    <section class="card">
+       <img src="https://picsum.photos/400/250?random=1" alt="التحفيز">
+       <div class="card-body">
+         <h3>مقدمة سريعة</h3>
+         <p>انضم إلينا لتبدأ رحلتك من مستوى المبتدئ (A1) وصولاً للمتقدم (C2). استكشف الدورات، التمارين، ومشروع نهائي لتطبيق Android.</p>
+         <a href="#levels" class="btn">ابحث عن المستوى المناسب</a>
+       </div>
+    </section>
+
+    <!-- شريحة لمستوى A1 -->
+    <section class="card" id="levels">
+       <img src="https://picsum.photos/400/250?random=2" alt="المستوى الأول">
+       <div class="card-body">
+         <h3>المستوى A1 – مبتدئ</h3>
+         <p><strong>أهداف:</strong> تحية، تعريف، أعداد 1‑20، وألوان.</p>
+         <ul style="list-style:none;padding:0;margin:0;">
+            <li>دورة Duolingo (1 شهر)</li>
+            <li>تمرين Flashcard (3 أيام)</li>
+            <li>مشروع أساسي: تسجيل فيديو يُقدّس 30 ثانية بنفسك!</li>
+         </ul>
+         <a href="#" class="btn">ابدأ A1</a>
+       </div>
+    </section>
+
+    <!-- شريحة لمستوى B1 (مثال) -->
+    <section class="card">
+       <img src="https://picsum.photos/400/250?random=3" alt="المستوى المتوسط">
+       <div class="card-body">
+         <h3>المستوى B1 – متوسط</h3>
+         <p>توسيع المفردات، القواعد المتقدمة، وإصدار نص قصير.</p>
+         <ul style="list-style:none;padding:0;margin:0;">
+            <li>دورة Coursera “English for All” (2 شهر)</li>
+            <li>تمرين كتابي: مقال 150 كلمة (روز)</li>
+            <li>محادثة مع AI (Speechling)</li>
+         </ul>
+         <a href="#" class="btn">ابدأ B1</a>
+       </div>
+    </section>
+
+</main>
+
+<footer>
+   © 2026 مسار الإنجليزية. | يتم تطويره بفضل الأدوات المتاحة مجاناً.
+</footer>
+
+</body>
+</html>
