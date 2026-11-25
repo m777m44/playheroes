@@ -1,0 +1,22 @@
+fun MCQScreen(
+    question: MCQuestion,
+    onAnswerSelected: (Boolean) -> Unit
+) {
+    Text(text = question.text, style = MaterialTheme.typography.titleMedium)
+    Spacer(Modifier.height(16.dp))
+    question.options.forEachIndexed { idx, opt ->
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            RadioButton(
+                selected = idx == question.selectedOption,
+                onClick = { question.selectedOption = idx })
+            Text(text = opt)
+        }
+    }
+    Spacer(Modifier.height(24.dp))
+    Button(onClick = {
+        val correct = question.options[question.selectedOption] == question.correctAnswer
+        onAnswerSelected(correct)
+    }) {
+        Text("التحقق")
+    }
+}
