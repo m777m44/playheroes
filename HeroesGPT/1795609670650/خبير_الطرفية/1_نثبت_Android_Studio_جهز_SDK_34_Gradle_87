@@ -1,0 +1,16 @@
+#    (افترض أنك تستخدم Ubuntu 22.04، يمكن تعديل لأوبونتو...)
+sudo apt update && sudo apt install openjdk-21-jdk
+
+# 2. clone repo (سيتم إنشاؤه لاحقاً)
+git clone https://github.com/your-org/english-learning-app.git
+cd english-learning-app
+
+# 3. تشغيل project
+./gradlew build
+./gradlew assembleDebug
+# لتجربة على محاكي
+./gradlew run
+
+# 4. لتوليد APK Release
+./gradlew assembleRelease
+# APK سيكون في app/build/outputs/apk/release/app-release.apk
